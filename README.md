@@ -1,4 +1,4 @@
-# :wave: Say hi to Hotdog :wave:
+# :hotdog: Say hi to Hotdog :poop:
 
 [![Generic badge](https://img.shields.io/badge/Are%20you%20a%20hotdog%3F-yes-green.svg)](https://shields.io/)
 
@@ -12,7 +12,7 @@ This project is created and intended to be used for the [Shopify Theme Developme
 
 Status | Lectures
 ------------ | -------------
-:hot-dog
+:rocket
 
 ## How to use
 
