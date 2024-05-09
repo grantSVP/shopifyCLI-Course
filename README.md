@@ -8,11 +8,6 @@ This project is created and intended to be used for the [Shopify Theme Developme
 [Get the course!](https://weeklyhow.com/) | [Lessons covered](#lessons-covered) |
 [How to use](#how-to-use) | [Not a hotdog?](#not-a-hotdog)
 
-## Lessons covered
-
-Status | Lectures
------------- | -------------
-:rocket
 
 ## How to use
 
