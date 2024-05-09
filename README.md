@@ -1,4 +1,4 @@
-# :wave: Say hi to Elizabeth :wave:
+# :wave: Say hi to Hotdog :wave:
 
 [![Generic badge](https://img.shields.io/badge/Are%20you%20a%20hotdog%3F-yes-green.svg)](https://shields.io/)
 
