@@ -1,20 +1,29 @@
-{% paginate blog.articles by section.settings.number_of_blog_posts %}
-  {% for product in blog.articles %}
-    <div>
-    {% if article.image %}
-        <img src="{{ article.image | image_url: 'medium'}}" alt=' {{ article.image.alt }}' width="{{ article.image.width }}" height="{{ article.image.height }}" loading="lazy">
+<div class="py-8">
+  {% paginate blog.articles by section.settings.number_of_blog_posts %}
+  <h1 class='text-center text-3xl'>{{ blog.title }}</h1>
+    {% for product in blog.articles %}
+      <div>
+        {% if article.image %}
+          <img
+            src="{{ article.image | image_url: 'medium'}}"
+            alt=" {{ article.image.alt }}"
+            width="{{ article.image.width }}"
+            height="{{ article.image.height }}"
+            loading="lazy"
+          >
         {% else %}
-        {{ 'image' | placeholder_svg_tag: 'w-20' }}
-    {%  endif %}
-    <h1>{{ article.title }}</h1>
+          {{ 'image' | placeholder_svg_tag: 'w-20' }}
+        {% endif %}
+        <h1>{{ article.title }}</h1>
 
-    {% if article.excerpt.size > 0 %}
+        {% if article.excerpt.size > 0 %}
         {% else %}
-        <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
-    {% endif %}
+          <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endpaginate %}
 </div>
-  {% endfor %}
-{% endpaginate %}
 
 {% schema %}
 {
@@ -29,6 +38,6 @@
       "label": "Blog posts per page",
       "default": 3
     }
-    ]
+  ]
 }
 {% endschema %}
