@@ -24,20 +24,20 @@
         <div class="flex items-center justify-center">
           <div class="max-w-7xl text-center">
             {% if section.settings.enable_published_date %}
-              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+              <time itemprop='datePublished dateCreated' datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
                 {{- article.published_at | date: format: 'on_date' -}}
               </time>
             {% endif %}
           </div>
         </div>
       {% when 'featured_image' %}
-        <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
+        <div itemprop='image' class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx-auto overflow-hidden my-4">
           {% if article.image != blank %}
             <img
               class="w-full h-80 md:h-96 object-cover object-center"
               width=""
               height=""
-              src="{{ article.image | img_url: 'large' }}"
+              src="{{ article.image | image_url: 'large' }}"
               alt="{{ article.image.alt }}"
             >
           {% else %}
@@ -48,7 +48,7 @@
 
       {% when 'article_content' %}
         <div class="flex items-center justify-center">
-          <div class="max-w-4xl">
+          <div itemprop='articleBody' class="max-w-4xl">
             {{ article.content }}
           </div>
         </div>
@@ -70,7 +70,7 @@
             </div>
           {% endfor %}
           <div class='max-w-6xl mx-auto'>
-            {% render 'pagination' %}
+            {% render 'pagination', pagination: paginate %}
           </div>
         {% endpaginate %}
       </div>
